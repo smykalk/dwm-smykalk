@@ -32,6 +32,7 @@ static const char *const autostart[] = {
 	"set-keyboard", NULL,
 	"locker", NULL,
 	"dualscreen", NULL,
+    "sh", "-c", "hsetroot -cover ~/.local/share/wallpapers/1611701560276.jpg", NULL,
 	NULL /* terminate */
 };
 

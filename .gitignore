@@ -1,6 +1,7 @@
 config.h
 dwm
 dwm.o
+drw.o
 util.o
 *.orig
 *.rej

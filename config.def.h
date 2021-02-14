@@ -143,7 +143,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
 
     // Restart dwm
-	//{ MODKEY|ControlMask,           XK_r,      quit,           {1} },
+    { MODKEY|ControlMask,           XK_r,      quit,           {1} },
 };
 
 /* button definitions */

@@ -52,7 +52,7 @@ static const char *const autostart[] = {
 	"locker", NULL,
 	"dualscreen", NULL,
     "sh", "-c", "hsetroot -cover ~/.local/share/wallpapers/1611701560276.jpg", NULL,
-	"sleep 1 && dwmblocks", NULL,
+	"dwmblocks", NULL,
 	NULL /* terminate */
 };
 

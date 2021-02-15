@@ -47,6 +47,7 @@ static const char *colors[][3]      = {
 static const char *const autostart[] = {
 //	"picom", NULL,
 	"nm-applet", NULL,
+    "owncloud", NULL,
 	"set-touchpad", NULL,
 	"set-keyboard", NULL,
 	"locker", NULL,

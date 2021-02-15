@@ -940,7 +940,7 @@ void drawbar(Monitor *m)
 	if (showsystray && m == systraytomon(m))
 		wbar -= getsystraywidth();
 	/* draw status first so it can be overdrawn by tags later */
-	if (m == selmon)
+	if (m == selmon || 1)
 	{ /* status is only drawn on selected monitor */
 		char *stc = stextc;
 		char *stp = stextc;
@@ -2622,6 +2622,7 @@ void updatesizehints(Client *c)
 
 void updatestatus(void)
 {
+    Monitor* m;
 	char rawstext[STATUSLENGTH];
 
 	if (gettextprop(root, XA_WM_NAME, rawstext, sizeof rawstext))
@@ -2645,7 +2646,8 @@ void updatestatus(void)
 		strcpy(stexts, stextc);
 		wstext = TEXTW(stextc) + LSPAD + RSPAD;
 	}
-	drawbar(selmon);
+	for(m = mons; m; m = m->next)
+		drawbar(m);
 }
 
 void updatesystrayicongeom(Client *i, int w, int h)

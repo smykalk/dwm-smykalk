@@ -62,7 +62,7 @@ static const char *tags[] = { "", "", "", "", "", "", "", "
 
 static const char browser[] = "firefox";
 static const char terminal[] = "kitty";
-static const char fileexp[] = "pcmanfm";
+static const char fileexp[] = "dolphin";
 static const char mail[] = "thunderbird";
 
 static const Rule rules[] = {
@@ -82,6 +82,7 @@ static const Rule rules[] = {
 	{ "electronplayer", NULL, NULL,       1 << 4,       0,           -1 },
 	{ "Thunderbird", NULL,    NULL,       1 << 5,       0,           -1 },
     { "Microsoft Teams - Preview", NULL, NULL, 1 << 6,  0,           -1 },
+    { "zoom", NULL, NULL, 1 << 6,  0,           -1 },
 };
 
 /* layout(s) */

@@ -11,7 +11,7 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
-static const char *fonts[]          = { "monospace:size=11", "Font Awesome 5 Free Solid:size=12" };
+static const char *fonts[]          = { "monospace:size=11", "Font Awesome 5 Free Solid:size=11" };
 static const char dmenufont[]       = "monospace:size=11";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -48,12 +48,14 @@ static const char *const autostart[] = {
 //	"picom", NULL,
 	"nm-applet", NULL,
     "owncloud", NULL,
+    "dunst", NULL,
 	"set-touchpad", NULL,
 	"set-keyboard", NULL,
 	"locker", NULL,
 	"dualscreen", NULL,
     "sh", "-c", "hsetroot -cover ~/.local/share/wallpapers/1611701560276.jpg", NULL,
-	"dwmblocks", NULL,
+    "sh", "-c", "libinput-gestures-setup start", NULL,
+	"/usr/local/bin/dwmblocks", NULL,
 	NULL /* terminate */
 };
 
@@ -76,13 +78,13 @@ static const Rule rules[] = {
 	{ "kitty",    NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Pcmanfm",  NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "dolphin",  NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "Code",    NULL,        NULL,       1 << 3,       0,           -1 },
+	{ "Code",     NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Lispworks", NULL,      NULL,       1 << 3,       0,           -1 },
 	{ "Spotify",  NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "electronplayer", NULL, NULL,       1 << 4,       0,           -1 },
 	{ "Thunderbird", NULL,    NULL,       1 << 5,       0,           -1 },
     { "Microsoft Teams - Preview", NULL, NULL, 1 << 6,  0,           -1 },
-    { "zoom", NULL, NULL, 1 << 6,  0,           -1 },
+    { "zoom",     NULL,       NULL,       1 << 6,       0,           -1 },
 };
 
 /* layout(s) */
@@ -116,12 +118,13 @@ static const char *browsercmd[]  = { browser, NULL };
 static const char *fileexpcmd[]  = { fileexp, NULL };
 static const char *spectaclecmd[] = { "spectacle", "-rbc", NULL };
 static const char *lockcmd[]  = { "lock", NULL };
+static const char *updatelayoutblockcmd[]  = { "sigdwmblocks 2", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 
-    // Update kblayout dwmblock when switching keyboard layout 
-    { 0|ShiftMask,                  XK_Alt_L,  spawn,          SHCMD("sigdwmblocks 2") }, 
+    // Update kblayout dwmblock when switching keyboard layout
+    { 0,                            XK_Alt_L,  spawn,          SHCMD("/usr/local/bin/sigdwmblocks 2") }, 
 
     // Spawning apps
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },

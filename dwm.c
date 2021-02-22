@@ -256,7 +256,7 @@ static void monocle(Monitor* m);
 static void motionnotify(XEvent* e);
 static void movemouse(const Arg* arg);
 static Client* nexttiled(Client* c);
-static void pop(Client*);
+//static void pop(Client*);
 static void propertynotify(XEvent* e);
 static void quit(const Arg* arg);
 static Monitor* recttomon(int x, int y, int w, int h);
@@ -289,7 +289,7 @@ static Monitor* systraytomon(Monitor* m);
 static void tag(const Arg* arg);
 static void tagmon(const Arg* arg);
 static void tile(Monitor*);
-static void togglebar(const Arg* arg);
+//static void togglebar(const Arg* arg);
 static void togglefloating(const Arg* arg);
 static void toggletag(const Arg* arg);
 static void toggleview(const Arg* arg);
@@ -1420,14 +1420,14 @@ nexttiled(Client* c) {
 		;
 	return c;
 }
-
+/*
 void pop(Client* c) {
 	detach(c);
 	attach(c);
 	focus(c);
 	arrange(c->mon);
 }
-
+*/
 void propertynotify(XEvent* e) {
 	Client* c;
 	Window trans;
@@ -2040,7 +2040,7 @@ void tile(Monitor* m) {
 			ty += HEIGHT(c) + gappx;
 		}
 }
-
+/*
 void togglebar(const Arg* arg) {
 	selmon->showbar = !selmon->showbar;
 	updatebarpos(selmon);
@@ -2058,7 +2058,7 @@ void togglebar(const Arg* arg) {
 	}
 	arrange(selmon);
 }
-
+*/
 void togglefloating(const Arg* arg) {
 	if (!selmon->sel)
 		return;

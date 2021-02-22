@@ -56,6 +56,7 @@ static const char *const autostart[] = {
     "sh", "-c", "hsetroot -cover ~/.local/share/wallpapers/1611701560276.jpg", NULL,
     "sh", "-c", "libinput-gestures-setup start", NULL,
 	"/usr/local/bin/dwmblocks", NULL,
+    "sh", "-c", "redshift-qt -t 6500:3500 -l 49.58:17.26", NULL,
 	NULL /* terminate */
 };
 

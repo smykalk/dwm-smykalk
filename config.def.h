@@ -81,10 +81,11 @@ static const Rule rules[] = {
 	{ "Code",     NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Lispworks", NULL,      NULL,       1 << 3,       0,           -1 },
 	{ "Spotify",  NULL,       NULL,       1 << 4,       0,           -1 },
-	{ "electronplayer", NULL, NULL,       1 << 4,       0,           -1 },
+	{ "netflix-nativefier-60ba6e", NULL, NULL, 1 << 4,  0,           -1 },
 	{ "Thunderbird", NULL,    NULL,       1 << 5,       0,           -1 },
     { "Microsoft Teams - Preview", NULL, NULL, 1 << 6,  0,           -1 },
     { "zoom",     NULL,       NULL,       1 << 6,       0,           -1 },
+    { "icloud-nativefier-0766bf", NULL, NULL, 1 << 7,   0,           -1 },
 };
 
 /* layout(s) */
@@ -118,13 +119,12 @@ static const char *browsercmd[]  = { browser, NULL };
 static const char *fileexpcmd[]  = { fileexp, NULL };
 static const char *spectaclecmd[] = { "spectacle", "-rbc", NULL };
 static const char *lockcmd[]  = { "lock", NULL };
-static const char *updatelayoutblockcmd[]  = { "sigdwmblocks 2", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 
     // Update kblayout dwmblock when switching keyboard layout
-    { 0,                            XK_Alt_L,  spawn,          SHCMD("/usr/local/bin/sigdwmblocks 2") }, 
+    { 0|ShiftMask,                  XK_Alt_L,  spawn,          SHCMD("sigdwmblocks 2") }, 
 
     // Spawning apps
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
